@@ -1,0 +1,44 @@
+{
+  "version": "2.0.0",
+  "inputs": [
+    {
+      "id": "feature",
+      "type": "promptString",
+      "description": "Feature slug (for example: auth-refresh)"
+    },
+    {
+      "id": "base",
+      "type": "promptString",
+      "description": "Base branch",
+      "default": "main"
+    }
+  ],
+  "tasks": [
+    {
+      "label": "worktree:create-multi-agent",
+      "type": "shell",
+      "command": "git fetch --all --prune; git worktree add -b feature/${input:feature}/planner .worktrees/${input:feature}/planner ${input:base}; git worktree add -b feature/${input:feature}/implementer .worktrees/${input:feature}/implementer ${input:base}; git worktree add -b feature/${input:feature}/tester .worktrees/${input:feature}/tester ${input:base}",
+      "group": "build"
+    },
+    {
+      "label": "worktree:list",
+      "type": "shell",
+      "command": "git worktree list"
+    },
+    {
+      "label": "worktree:status-multi-agent",
+      "type": "shell",
+      "command": "git -C .worktrees/${input:feature}/planner status --short --branch; git -C .worktrees/${input:feature}/implementer status --short --branch; git -C .worktrees/${input:feature}/tester status --short --branch"
+    },
+    {
+      "label": "worktree:remove-multi-agent-safe",
+      "type": "shell",
+      "command": "git worktree remove .worktrees/${input:feature}/planner; git worktree remove .worktrees/${input:feature}/implementer; git worktree remove .worktrees/${input:feature}/tester; git branch -d feature/${input:feature}/planner; git branch -d feature/${input:feature}/implementer; git branch -d feature/${input:feature}/tester"
+    },
+    {
+      "label": "worktree:remove-multi-agent-force",
+      "type": "shell",
+      "command": "git worktree remove --force .worktrees/${input:feature}/planner; git worktree remove --force .worktrees/${input:feature}/implementer; git worktree remove --force .worktrees/${input:feature}/tester; git branch -D feature/${input:feature}/planner; git branch -D feature/${input:feature}/implementer; git branch -D feature/${input:feature}/tester"
+    }
+  ]
+}
