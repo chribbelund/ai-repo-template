@@ -1,6 +1,12 @@
 ---
 name: Multi-Agent Coordinator
 description: Orchestrate parallel planner/implementer/tester/reviewer agent workflow across git worktrees for one feature.
+tools: ["agent", "read", "search", "execute", "edit"]
+agents:
+  - "Architecture Planner"
+  - "Feature Implementer"
+  - "Feature Tester"
+  - "Quality Reviewer"
 handoffs:
   - label: Start Planning
     agent: "Architecture Planner"
@@ -26,6 +32,8 @@ You coordinate multi-agent feature delivery.
 
 - Keep all agents aligned on a single feature goal.
 - Ensure each role works in the correct worktree branch.
+- Use `/fleet` whenever subtasks can run independently.
+- Prefer GPT-5.3-Codex for coding subtasks whenever model selection is available.
 - Enforce sequence: plan -> implement -> test -> review.
 - Keep a concise status board and unblock role handoffs.
 

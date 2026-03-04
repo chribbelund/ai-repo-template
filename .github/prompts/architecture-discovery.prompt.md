@@ -15,3 +15,4 @@ Output:
 - API/data contract impact
 - Risk list and sequencing recommendations
 - Minimal implementation plan ready for handoff
+- Prefer GPT-5.3-Codex when model selection is available.

@@ -16,5 +16,6 @@ Requirements:
 - Include migration/data concerns if needed.
 - Include validation commands and expected outcomes.
 - Include risks, mitigations, and rollback plan.
+- Prefer GPT-5.3-Codex when model selection is available.
 
 Output in concise markdown with checklists.

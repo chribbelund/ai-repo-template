@@ -18,7 +18,14 @@ This `.github` folder is a production-grade baseline for agentic software develo
 3. Run `/run-feature-tests` (or `/test-and-fix`) for stabilization.
 4. Validate quality with `/review-changes`.
 
+For large parallelizable work, prefer `/orchestrate-multi-agent-feature` with `/fleet`.
+
 For full orchestration, run `/orchestrate-multi-agent-feature` with the `Multi-Agent Coordinator` agent.
+
+## Model Routing
+
+- Agents and prompts explicitly instruct: prefer `GPT-5.3-Codex` when model selection is available.
+- If your Copilot environment supports model frontmatter, keep `gpt-5.3-codex` first with fallbacks.
 
 ## Parallel Multi-Agent Setup (VS Code + Git Worktree)
 
@@ -38,6 +45,7 @@ This template uses native `git worktree` via VS Code tasks in `.vscode/tasks.jso
   - `testing.instructions.md`
   - `security.instructions.md`
   - `documentation.instructions.md`
+  - `copilot-fleet.instructions.md`
 - `.github/agents/`
   - `architect.agent.md`
   - `implementer.agent.md`

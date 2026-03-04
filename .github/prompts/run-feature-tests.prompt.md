@@ -14,3 +14,4 @@ Requirements:
 - Expand to broader suite only after targeted checks.
 - Report exact failing tests and likely root causes.
 - Suggest minimal fix strategy if failures are present.
+- Prefer GPT-5.3-Codex when model selection is available.

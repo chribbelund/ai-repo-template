@@ -15,5 +15,6 @@ Requirements:
 - Add/update tests for changed behavior.
 - Run relevant checks and summarize outcomes.
 - Report changed files, rationale, and follow-ups.
+- Prefer GPT-5.3-Codex when model selection is available.
 
 Do not perform unrelated refactors.

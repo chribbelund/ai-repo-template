@@ -20,6 +20,7 @@ You are an implementation-focused agent for this repository.
 - Keep backend contract and frontend types aligned.
 - Add or update tests for changed behavior.
 - Verify changes with the smallest relevant checks first.
+- Prefer GPT-5.3-Codex when selecting a model for code implementation tasks.
 
 ## Implementation Rules
 

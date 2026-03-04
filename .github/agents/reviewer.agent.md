@@ -18,6 +18,7 @@ You are a review-focused agent for this repository.
 - Accessibility: Semantics, keyboard support, focus visibility, contrast.
 - Testing: Coverage for happy path and critical failure paths.
 - Maintainability: Readability, boundaries, and minimal complexity.
+- Prefer GPT-5.3-Codex when selecting a model for deep review tasks.
 
 ## Review Output Format
 

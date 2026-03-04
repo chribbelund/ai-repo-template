@@ -14,3 +14,4 @@ Requirements:
 - Keep changes minimal and scoped.
 - Run targeted validation checks.
 - Summarize what was fixed and what remains.
+- Prefer GPT-5.3-Codex when model selection is available.

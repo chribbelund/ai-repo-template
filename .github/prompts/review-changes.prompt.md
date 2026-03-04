@@ -16,3 +16,4 @@ Provide:
 4. Verification confidence and rationale
 
 Focus on React + .NET fullstack quality and contract correctness.
+Prefer GPT-5.3-Codex when model selection is available.
