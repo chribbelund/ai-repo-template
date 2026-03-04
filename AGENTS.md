@@ -57,6 +57,24 @@ Suggested role mapping:
 - tester worktree -> `Feature Tester`
 - any worktree as needed -> `Quality Reviewer`
 
+## Parallel Execution with Copilot CLI Fleet
+
+The `/fleet` slash command in Copilot CLI breaks a task into independent subtasks and runs them in parallel via subagents. All custom agents in `.github/agents/` are available to Fleet automatically.
+
+Typical usage:
+
+1. In an interactive Copilot CLI session, press Shift+Tab to enter plan mode.
+2. Describe the feature and refine the plan with Copilot.
+3. Select **Accept plan and build on autopilot + /fleet** to run subtasks in parallel.
+
+Or use the bundled prompt directly:
+
+```
+/fleet-build-feature [feature request]
+```
+
+Use `/tasks` in the CLI to monitor subagent progress.
+
 ## Repo Conventions
 
 - Keep API contracts explicit and typed.

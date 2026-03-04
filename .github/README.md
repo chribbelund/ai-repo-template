@@ -20,6 +20,24 @@ This `.github` folder is a production-grade baseline for agentic software develo
 
 For full orchestration, run `/orchestrate-multi-agent-feature` with the `Multi-Agent Coordinator` agent.
 
+## Parallel Execution with Copilot CLI Fleet
+
+The `/fleet` slash command in GitHub Copilot CLI decomposes a complex task into independent subtasks and runs them in parallel using subagents. The custom agents in `.github/agents/` are automatically available to Fleet subagents.
+
+Use `/fleet-build-feature` for a structured parallel feature build:
+
+```
+/fleet-build-feature [feature request]
+```
+
+Or use `/fleet` directly with a prompt in an interactive Copilot CLI session:
+
+1. Press Shift+Tab to enter plan mode and describe the feature.
+2. Work with Copilot to produce an implementation plan.
+3. Select **Accept plan and build on autopilot + /fleet** to execute all subtasks in parallel.
+
+Use `/tasks` to monitor subagent progress during a Fleet session.
+
 ## Parallel Multi-Agent Setup (VS Code + Git Worktree)
 
 This template uses native `git worktree` via VS Code tasks in `.vscode/tasks.json`.
@@ -51,6 +69,7 @@ This template uses native `git worktree` via VS Code tasks in `.vscode/tasks.jso
   - `test-and-fix.prompt.md`
   - `review-changes.prompt.md`
   - `orchestrate-multi-agent-feature.prompt.md`
+  - `fleet-build-feature.prompt.md`
 - `.github/skills/`
   - `dotnet-api-csharp/`
   - `react-frontend-modern/`
